@@ -112,7 +112,12 @@ public class Main {
             System.out.println(" Value is " + mapElem.getValue());
         }
         // sort hashmap
+        List<HashMap.Entry> sortedMap = new ArrayList<>(dogsHashMap.entrySet());
+        sortedMap.sort(Comparator.comparing(o -> ((Dog) o.getValue()).getBreed()));
+
         // hashmap strings as key
+        Map<String, Dog> stringDogsMap = new HashMap<>();
+        stringDogsMap.put("John", new Dog("Springer", 60, false));
     }
 
 }
